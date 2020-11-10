@@ -1,3 +1,7 @@
+const express = require("express");
+const messageBird = require("messagebird")(process.env.api);
+const router = express.Router();
+
 router.post('/phone',(req,res)=>{
     const number = req.body.number;
     messageBird.verify.create(number,{
